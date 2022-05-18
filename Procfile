@@ -1,1 +1,1 @@
-web: gunicorn stormy-escarpment-00011.wsgi --log-file -
+web: gunicorn diploma_work.wsgi --log-file -
