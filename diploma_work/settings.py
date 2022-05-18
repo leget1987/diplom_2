@@ -129,12 +129,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 
-import environ
-PROJECT_DIR = (environ.Path(__file__) - 4)
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = str(PROJECT_DIR.path('static'))
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 import dj_database_url
 
