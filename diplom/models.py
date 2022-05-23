@@ -228,8 +228,8 @@ class TrainingClass(models.Model):
     training_class_id = models.AutoField(primary_key=True, db_column="id класса", verbose_name="id класса")
     discipline = models.ForeignKey(to='Discipline', on_delete=models.CASCADE, db_column="id_предмета",
                                    verbose_name="Предмет")
-    list_classes = models.ForeignKey(to='ListClasses', on_delete=models.CASCADE, db_column="id_списка классов",
-                                     verbose_name="Список классов")
+    # list_classes = models.ForeignKey(to='ListClasses', on_delete=models.CASCADE, db_column="id_списка классов",
+    #                                  verbose_name="Список классов")
     name = models.CharField(max_length=50, db_column="Наименование", verbose_name="Наименование")
 
     def __str__(self):
@@ -246,6 +246,8 @@ class ListClasses(models.Model):
                                                                                                      "классов")
     statement = models.ForeignKey(to='Statement', on_delete=models.CASCADE, db_column="id_заявления",
                                   verbose_name="Заявление")
+    training_class = models.ForeignKey(to='TrainingClass', on_delete=models.CASCADE, db_column="id_класса",
+                                     verbose_name="Список классов", default='')
 
     def __str__(self):
         return f'Список классов'

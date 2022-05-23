@@ -56,11 +56,11 @@ class DisciplineView(admin.ModelAdmin):
 
 
 class TrainingClassView(admin.ModelAdmin):
-    list_display = ('discipline', 'list_classes', 'name')
+    list_display = ('discipline', 'name')
 
 
 class ListClassesView(admin.ModelAdmin):
-    list_display = ('statement',)
+    list_display = ('statement', 'training_class')
 
 
 admin.site.register(Quarter, QuarterView)
